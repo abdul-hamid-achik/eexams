@@ -1,0 +1,2 @@
+web: bin/eexams
+release: lucky db.migrate

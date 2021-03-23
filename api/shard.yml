@@ -1,0 +1,28 @@
+name: eexams
+version: 0.1.0
+
+authors:
+  - abdul hamid <abdulachik@gmail.com>
+
+targets:
+  eexams:
+    main: src/eexams.cr
+
+crystal: 1.0.0
+
+dependencies:
+  lucky:
+    github: luckyframework/lucky
+    version: ~> 0.26.0
+  authentic:
+    github: luckyframework/authentic
+    version: ~> 0.7.2
+  carbon:
+    github: luckyframework/carbon
+    version: ~> 0.1.2
+  dotenv:
+    github: gdotdesign/cr-dotenv
+    version: ~> 0.7.0
+  jwt:
+    github: crystal-community/jwt
+    version: ~> 1.5.0

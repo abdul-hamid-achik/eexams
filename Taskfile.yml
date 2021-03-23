@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: '3'
+
+includes:
+  api:
+    taskfile: ./api/Taskfile.yml
+    dir: ./api
+  
+  web:
+    taskfile: ./web/Taskfile.yml
+    dir: ./web
+
+tasks:
+  setup:
+    cmds:
+      - asdf install
