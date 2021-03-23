@@ -15,3 +15,22 @@ tasks:
   setup:
     cmds:
       - asdf install
+      - cp .env.template .env
+      - cp .env web/.env 
+      - cp .env api/.env
+
+  compose.up:
+    cmds:
+      - docker-compose up -d
+
+  compose.down:
+    cmds:
+      - docker-compose down -v
+  
+  compose.restart:
+    cmds:
+      - docker-compose restart
+  
+  compose.ps:
+    cmds:
+      - docker-compose ps

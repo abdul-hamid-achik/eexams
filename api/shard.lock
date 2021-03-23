@@ -44,6 +44,10 @@ shards:
     git: https://github.com/crystal-community/future.cr.git
     version: 0.1.0
 
+  graphql:
+    git: https://github.com/graphql-crystal/graphql.git
+    version: 0.3.0
+
   habitat:
     git: https://github.com/luckyframework/habitat.git
     version: 0.4.6

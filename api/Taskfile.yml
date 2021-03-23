@@ -18,3 +18,32 @@ tasks:
   test:
     cmds:
       - crystal spec
+
+  db.verify_connection:
+    cmds:
+      - lucky db.verify_connection
+
+  db.migrate:
+    deps: [db.verify_connection]
+    cmds:
+      - lucky db.migrate 
+      
+  db.create:
+    cmds:
+      - lucky db.create
+
+  db.setup:
+    cmds:
+      - lucky db.setup
+  
+  db.console:
+    cmds:
+      - lucky db.console
+
+  cmd:
+    cmds:
+      - lucky {{.COMMAND}} {{.ARGS}}
+
+  help:
+    cmds:
+      - lucky --help
