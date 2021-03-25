@@ -17,7 +17,11 @@ tasks:
 
   test:
     cmds:
-      - crystal spec
+      - crystal spec --verbose
+  
+  test.wip:
+    cmds:
+      - crystal spec --tag 'wip' --verbose
 
   db.verify_connection:
     cmds:

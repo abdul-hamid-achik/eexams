@@ -6,7 +6,7 @@ class CreateAnswers::V20210323040710 < Avram::Migrator::Migration::V1
       add_timestamps
 
       add_belongs_to survey_question_answer : SurveyQuestionAnswer, on_delete: :cascade, foreign_key_type: UUID
-      add_belongs_to creator : User, on_delete: :cascade, foreign_key_type: UUID
+      add_belongs_to user : User, on_delete: :cascade, foreign_key_type: UUID
     end
   end
 

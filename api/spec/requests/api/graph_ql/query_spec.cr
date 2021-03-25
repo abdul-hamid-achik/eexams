@@ -1,24 +1,25 @@
 require "../../../spec_helper"
 
-describe Api::GraphQL::Index do
-  it "returns the signed in user" do
-    user = UserFactory.create
+describe GraphQL::Index do
+  surveys_query = "
+    query {
+      surveys {
+        description
+      }
+    }
+  "
 
-    response = ApiClient.auth(user).exec(Api::Me::Show)
+  it "get surveys", tags: "wip" do
+    client = ApiClient.new
 
-    response.should send_json(200, email: user.email)
-  end
+    # client
+    #   .headers("Content-Type", "application/json")
+    # .headers("Accept", "application/vnd.api.v1+json")
 
-  it "returns an error if credentials are invalid" do
-    user = UserFactory.create
-    invalid_params = valid_params(user).merge(password: "incorrect")
-
-    response = ApiClient.exec(Api::SignIns::Create, user: invalid_params)
-
-    response.should send_json(
-      400,
-      param: "password",
-      details: "password is wrong"
-    )
+    response = client.exec(GraphQL::Index, query: surveys_query)
+    puts response.body
+    # response.should send_json(
+    #   200
+    # )
   end
 end

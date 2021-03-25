@@ -1,7 +1,5 @@
-require "graphql"
-
 @[GraphQL::Object]
-class Survey
+class Types::Survey
   include GraphQL::ObjectType
 
   @[GraphQL::Field]
